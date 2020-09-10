@@ -32,9 +32,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnc = new javax.swing.JButton();
         btnclear = new javax.swing.JToggleButton();
         labelf = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         outk = new javax.swing.JLabel();
         outf = new javax.swing.JLabel();
+        label_msg = new javax.swing.JLabel();
 
         setResizable(false);
 
@@ -71,11 +71,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         labelf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         labelf.setText("Fahrenheit:");
 
-        jLabel1.setText("@miguelhp");
-
+        outk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        outk.setText("Esperando Informações");
+        outk.setAlignmentX(5.0F);
         outk.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        outf.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        outf.setText("Esperando Informações");
         outf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        label_msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_msg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,32 +90,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(inputc, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(btnc)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(labelc))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(labelf))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelf)
+                            .addComponent(outf, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(outk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(label_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(title))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outf, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(outk, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(title)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelk)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel1)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(inputc, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btnc)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(96, Short.MAX_VALUE))
+                        .addComponent(labelk)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,13 +129,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(labelk)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outk, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(labelf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(outf, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(outk, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(outf, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addComponent(label_msg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         getAccessibleContext().setAccessibleName("Conversor de Temperatura");
@@ -145,13 +151,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncActionPerformed
       //botao de converter
+      
+      
       celsius =  Float.parseFloat(inputc.getText());
       fahrenheit = ((celsius * 9)/5)+32;
       kelvin = celsius + 273;
       
+      inputc.setText("");
+        outk.setText("");
+        outf.setText("");
       outf.setText(""+fahrenheit);
       outk.setText(""+kelvin);
+     
+      if(celsius<=0){
+          label_msg.setText("Temperatura Muito Baixa!");
+      }else if(celsius<=10){
+          label_msg.setText("Temperatura Baixa!");
+      }
+      else if(celsius<=30){
+          label_msg.setText("Temperatura Agradavel!");
+      }else if(celsius<=45){
+          label_msg.setText("Temperatura Quente!");
+      }
+      else{
+          label_msg.setText("Temperatura Muito Quente!");
+      }
       
+    
     }//GEN-LAST:event_btncActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
@@ -160,9 +186,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fahrenheit = 0;
         kelvin = 0;
         
+        label_msg.setText("");
         inputc.setText("");
-        outk.setText("");
-        outf.setText("");
+        outk.setText("Esperando Informações");
+        outf.setText("Esperando Informações");
                
     }//GEN-LAST:event_btnclearActionPerformed
 
@@ -205,7 +232,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnc;
     private javax.swing.JToggleButton btnclear;
     private javax.swing.JTextField inputc;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_msg;
     private javax.swing.JLabel labelc;
     private javax.swing.JLabel labelf;
     private javax.swing.JLabel labelk;
