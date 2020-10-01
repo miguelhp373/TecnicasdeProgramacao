@@ -1,5 +1,7 @@
 
+import java.awt.Color;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -54,6 +56,7 @@ public class telaprincipal extends javax.swing.JFrame {
         jTextField2.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(42, 53, 66));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
@@ -75,6 +78,7 @@ public class telaprincipal extends javax.swing.JFrame {
         jLabel5.setText("Insira a Nota de Inglês:");
 
         inputsend.setText("Enviar Notas");
+        inputsend.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         inputsend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputsendActionPerformed(evt);
@@ -82,6 +86,7 @@ public class telaprincipal extends javax.swing.JFrame {
         });
 
         inputclear.setText("Novo");
+        inputclear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputclearActionPerformed(evt);
@@ -94,6 +99,8 @@ public class telaprincipal extends javax.swing.JFrame {
         jLabel7.setText("Nome do Aluno:");
 
         respname.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
+        respname.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        respname.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 153, 204));
@@ -123,31 +130,30 @@ public class telaprincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respname, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(respresult, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(respmedia, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                        .addComponent(respresult, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(respmedia, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(respname, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(respresult, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(respmedia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +184,7 @@ public class telaprincipal extends javax.swing.JFrame {
                                 .addComponent(inputclear, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(inputn3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))))
         );
@@ -227,22 +233,41 @@ public class telaprincipal extends javax.swing.JFrame {
        n1 = Float.parseFloat(inputn1.getText());
        n2 = Float.parseFloat(inputn2.getText());
        n3 = Float.parseFloat(inputn3.getText());
+       if((n1<=10)||(n1>=0)||(n2<=10)||(n2>=0)||(n3<=10)||(n3>=0)){   
        media = (n1+n2+n3)/3;
        DecimalFormat formatador = new DecimalFormat("0.00"); //formatar o numero decimal para duas casas
        
        if(media<3){
-         situation = "Aluno Reprovado";  
+         situation = "Aluno Reprovado"; 
+         respresult.setForeground(Color.red);
        }else if((media>3)&&(media<5)){
            situation = "Aluno de Recuperação";
+           respresult.setForeground(Color.yellow);
+           
        }else if(media>=5){
            situation = "Aluno Aprovado";
+           respresult.setForeground(Color.blue);
        }
        
        respname.setText(name);
        respmedia.setText(String.valueOf("Média Final: "+ formatador.format(media)));
        respresult.setText(String.valueOf(situation));
-      
        
+       }else{
+           if((n1<0)||(n1>10)){
+             JOptionPane.showMessageDialog(this,"Nota Inválida","Aviso",JOptionPane.INFORMATION_MESSAGE);
+              inputn1.setText("");
+              inputn1.requestFocus();
+           }else if((n2<0)||(n2>10)){
+             JOptionPane.showMessageDialog(this,"Nota Inválida","Aviso",JOptionPane.INFORMATION_MESSAGE);
+              inputn2.setText("");
+              inputn2.requestFocus();
+           }else if((n3<0)||(n3>10)){
+             JOptionPane.showMessageDialog(this,"Nota Inválida","Aviso",JOptionPane.INFORMATION_MESSAGE);
+              inputn3.setText("");
+              inputn3.requestFocus();
+           }
+       }      
     }//GEN-LAST:event_inputsendActionPerformed
 
     private void inputclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputclearActionPerformed
