@@ -294,6 +294,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       txtpes = 0;
       txtalt = 0;
       imc = 0;
+      txtpeso.requestFocus();
     }//GEN-LAST:event_btcncleanActionPerformed
 
     /**
