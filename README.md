@@ -11,3 +11,5 @@
 - [Maior e Menor Número](https://github.com/miguelhp373/TecnicasdeProgramacao/tree/master/maioremenor)
 
 - [Calculadora IMC 01/10/2020](https://github.com/miguelhp373/TecnicasdeProgramacao/tree/master/CalculadoraImc)
+
+- [CalculoInss](https://github.com/miguelhp373/TecnicasdeProgramacao/tree/master/CalculoInss) 
